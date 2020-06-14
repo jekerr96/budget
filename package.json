@@ -1,0 +1,33 @@
+{
+  "name": "budget",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jekerr96/budget.git"
+  },
+  "keywords": [
+    "node",
+    "js",
+    "vk",
+    "bot",
+    "bot",
+    "budget"
+  ],
+  "author": "jekerr <jekerr96@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jekerr96/budget/issues"
+  },
+  "homepage": "https://github.com/jekerr96/budget#readme",
+  "dependencies": {
+    "mongodb": "^3.5.9",
+    "node-vk-bot-api": "^3.3.4",
+    "uuid": "^8.1.0"
+  }
+}
