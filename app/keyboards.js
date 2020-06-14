@@ -27,4 +27,10 @@ const listReportsKeyboard = Markup.keyboard([
     ]
 ]).oneTime();
 
-module.exports = {defaultKeyboard, emptyKeyboard, listCustomersKeyboard, listReportsKeyboard};
+const cancelKeyboard = Markup.keyboard([
+    [
+        Markup.button('Отмена', 'negative'),
+    ]
+]).oneTime();
+
+module.exports = {defaultKeyboard, emptyKeyboard, listCustomersKeyboard, listReportsKeyboard, cancelKeyboard};
