@@ -97,7 +97,7 @@ class Report extends BaseModel {
     async deleteReportsByCustomer(customer) {
         let customerIndex = this.user.getCustomerIndex(customer);
 
-        await this.collection.remove({customer: customerIndex});
+        await this.collection.deleteOne({customer: customerIndex});
     }
 
     getMonthReport() {
