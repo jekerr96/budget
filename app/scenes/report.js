@@ -1,9 +1,7 @@
 const Scene = require('node-vk-bot-api/lib/scene');
-const {emptyKeyboard} = require("../keyboards");
 const {Report} = require("../models/report");
-const {listCustomersKeyboard} = require("../keyboards");
 const {User} = require("../models/user");
-const {defaultKeyboard, listReportsKeyboard} = require("../keyboards");
+const {emptyKeyboard, defaultKeyboard, listReportsKeyboard, cancelKeyboard, listCustomersKeyboard} = require("../keyboards");
 
 const reportScene = new Scene('report',
     async (ctx) => {
@@ -56,9 +54,15 @@ const addReportScene = new Scene('addReport',
 
         ctx.session.sumReport = sum;
         ctx.scene.next();
-        ctx.reply("Принята сумма " + sum + "\nДобавьте описание к отчету", null, defaultKeyboard);
+        ctx.reply("Принята сумма " + sum + "\nДобавьте описание к отчету", null, cancelKeyboard);
     },
     async (ctx) => {
+        if (ctx.message.text === "Отмена") {
+            ctx.scene.leave();
+            ctx.reply("Что будем делать?", null, defaultKeyboard);
+            return;
+        }
+
         let description = ctx.message.text;
         let userModel = new User();
         let user = await userModel.getUser(ctx.message.peer_id);
