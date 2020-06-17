@@ -100,14 +100,10 @@ class Report extends BaseModel {
         await this.collection.deleteOne({customer: customerIndex});
     }
 
-    getMonthReport() {
-        return 123;
-    }
-
     getMonthName(index) {
         return [
             "Январь", "Ферваль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"
-        ][index - 1];
+        ][index];
     }
 
     getCollectionName() {
