@@ -45,11 +45,18 @@ const addReportScene = new Scene('addReport',
         ctx.reply("Введите сумму", null, emptyKeyboard);
     },
     async (ctx) => {
-        let sum = parseFloat(ctx.message.text);
+        let sumList = ctx.message.text;
+        let sum = 0;
+
+        let splitSum = sumList.split("+");
+
+        splitSum.forEach(sumItem => {
+            sum += parseFloat(sumItem);
+        });
 
         ctx.session.sumReport = sum;
         ctx.scene.next();
-        ctx.reply("Прияната сумма " + sum + "\nДобавьте описание к отчету", null, emptyKeyboard);
+        ctx.reply("Принята сумма " + sum + "\nДобавьте описание к отчету", null, defaultKeyboard);
     },
     async (ctx) => {
         let description = ctx.message.text;
