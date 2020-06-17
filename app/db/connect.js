@@ -4,11 +4,7 @@ const DB_NAME = "budget";
 
 class MongoDb  {
     constructor() {
-        let mongoUrl = "mongodb://localhost:27017";
-
-        if (process.env.mongo) {
-            mongoUrl = process.env.mongo;
-        }
+        let mongoUrl = process.env.mongo;
 
         this.mongoClient = new MongoClient(mongoUrl, {
             useNewUrlParser: true,

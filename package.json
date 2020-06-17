@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/jekerr96/budget#readme",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "mongodb": "^3.5.9",
     "node-vk-bot-api": "^3.3.4",
     "uuid": "^8.1.0"

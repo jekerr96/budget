@@ -1,3 +1,4 @@
+require("dotenv").config();
 const MongoDb = require("./app/db/connect");
 const VkBot = require("node-vk-bot-api");
 const Markup = require("node-vk-bot-api/lib/markup");
@@ -13,7 +14,7 @@ const session = new Session();
 
 (async () => {
     global.dbConnection = await MongoDb.getConnection();
-    global.vkBot = new VkBot("11374e8d6e97e313f39bb9b53e6faa59e4af866352ae611a303b3177206887164e9b3ec797fd02048c86a");
+    global.vkBot = new VkBot(process.env.vk);
 
     const stage = new Stage(addScene, deleteScene, reportScene, addReportScene, reportByUserScene);
 
