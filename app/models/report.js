@@ -1,3 +1,4 @@
+const {formatDate} = require("../Helper");
 const {AddResult} = require("./add-result");
 const {BaseModel} = require("./base-model");
 
@@ -50,7 +51,7 @@ class Report extends BaseModel {
             }
 
             sumMonth += report.sum;
-            resultText += `\n\nОтчет за ${date}\nСумма: ${report.sum}\nОписание: ${report.description}`;
+            resultText += `\n\nОтчет за ${formatDate(date)}\nСумма: ${report.sum}\nОписание: ${report.description}`;
         }
 
         resultText += "\n\n Итого за месяц: " + sumMonth;
@@ -84,7 +85,7 @@ class Report extends BaseModel {
             }
 
             sumMonth += report.sum;
-            resultText += `\n\nОтчет за ${date}\nПользователь: ${this.user.getCustomerByIndex(report.customer)}\nСумма: ${report.sum}\nОписание: ${report.description}`;
+            resultText += `\n\nОтчет за ${formatDate(date)}\nПользователь: ${this.user.getCustomerByIndex(report.customer)}\nСумма: ${report.sum}\nОписание: ${report.description}`;
         }
 
         resultText += "\n\n Итого за месяц: " + sumMonth;
