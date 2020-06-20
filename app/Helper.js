@@ -3,7 +3,7 @@ const getKeyByValue = (object, value) => {
 };
 
 const formatDate = (date) => {
-    return `${date.getDay()}.${date.getMonth()}.${date.getFullYear()} ${date.getHours()}:${date.getSeconds()}`;
+    return `${date.getDate()}.${date.getMonth()}.${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`;
 };
 
 module.exports = {getKeyByValue, formatDate};
